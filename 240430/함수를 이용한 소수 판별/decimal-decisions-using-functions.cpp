@@ -10,9 +10,13 @@ bool isPrime(int n) {
 
 int isPrime_sum(int a, int b) {
   int sum = 0;
-  for (int i = a; i <= b; i++)
-    if (isPrime(i))
+  for (int i = a; i <= b; i++) {
+    if (i < 2) {
+      continue;
+    }
+    else if (isPrime(i))
       sum += i;
+  }
   return sum;
 }
 
