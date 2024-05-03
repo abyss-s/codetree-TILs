@@ -3,14 +3,15 @@
 using namespace std;
 
 bool IsMagicNumber(int n) {
+  int temp = n; // n이 0이 되므로 temp에 저장해두어야 함
   int sum = 0;
-  while (sum > 0) {
+  while (n > 0) {
     sum += n % 10;
     n /= 10;
     if (n == 0)
       break;
   }
-  return n % 2 == 0 && sum % 5 == 0;
+  return temp % 2 == 0 && sum % 5 == 0;
 }
 
 int main() {
