@@ -18,7 +18,7 @@ int main() {
   int a, b;
   cin >> a >> b;
 
-  if (b <= whatDay(a)) {
+  if (a <= 12 && b <= whatDay(a)) {
     cout << "Yes";
   } else {
     cout << "No";
