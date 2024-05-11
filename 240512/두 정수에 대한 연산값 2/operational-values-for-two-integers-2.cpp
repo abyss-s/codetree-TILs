@@ -1,16 +1,14 @@
 #include <iostream>
 using namespace std;
 
-void f(int a, int b) {
-  int max, min;
+void f(int& a, int& b) {
   if (a >= b) {
-    max = a;
-    min = b;
+    a *= 2;
+    b +=  10;
   } else {
-    max = b;
-    min = a;
+    a += 10;
+    b *= 2;
   }
-  cout << min + 10 << " " << max * 2;
 }
 
 int main() {
@@ -20,7 +18,10 @@ int main() {
   
   int a, b;
   cin >> a >> b;
+  
   f(a, b);
+
+  cout << a << " " << b;
 
   return 0;
 }
