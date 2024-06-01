@@ -4,9 +4,9 @@
 using namespace std;
 
 int main() {
-  string arr[100] = {""};
-  int n = 1;
-  int k = 1;
+  string arr[1000] = {""};
+  long int n = 1;
+  long int k = 1;
   cin >> n >> k;
   for (int i = 0; i < n; i++) {
     cin >> arr[i];
