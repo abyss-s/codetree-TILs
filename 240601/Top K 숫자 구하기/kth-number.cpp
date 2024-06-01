@@ -1,10 +1,9 @@
 #include <algorithm>
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-  string arr[1000] = {""};
+  int arr[1000] = {0};
   long int n = 1;
   long int k = 1;
   cin >> n >> k;
