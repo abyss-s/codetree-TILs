@@ -1,6 +1,6 @@
 str = input().split(" ")
-str.sort()
 a = int(str[0])
 b = int(str[1])
 c = int(str[2])
-print(a)
+min = a if (a <= b and a <= c) else (b if (b <= c) else c)
+print(min)
