@@ -7,4 +7,4 @@ while True:
     else:
         sum += n
         cnt += 1
-print(round(sum / cnt, 3))
+print(f"{sum/cnt:.2f}")
