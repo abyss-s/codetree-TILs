@@ -1,21 +1,19 @@
-a = list(map(str, input()))
+a = list(input())
 a.sort()
-
-b = list(map(str, input()))
+b = list(input())
 b.sort()
 
-isSameString = False
+isSameString = True
 
 if len(a) != len(b):
     isSameString = False
 else:
     for i in range(len(a)):
-        if a[i] == b[i]:
-            isSameString = True
-        else:
+        if a[i] != b[i]:
             isSameString = False
+            break
 
-if isSameString == True:
+if isSameString:
     print("Yes")
 else:
     print("No")
