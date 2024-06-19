@@ -7,7 +7,7 @@ if m1 == m2:
     sum = d2 - d1 + 1
 else:
     sum += days[m1] - d1
-    for m in range(m1 - 1, m2):
+    for m in range(m1 + 1, m2):
         sum += days[m]
     sum += d2
 
