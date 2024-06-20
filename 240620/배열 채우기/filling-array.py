@@ -1,4 +1,10 @@
-arr = list(map(int, input().split()))
+arr = []
+input_str = list(map(int, input().split()))
+for n in input_str:
+    if n == 0:
+        break
+    else:
+        arr.append(n)
+
 for i in range(len(arr) - 1, -1, -1):
-    if arr[i] != 0:
-        print(arr[i], end=" ")
+    print(arr[i], end=" ")
