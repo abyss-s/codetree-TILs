@@ -1,13 +1,17 @@
 n = int(input())
-arr = [0]
+arr = []
 for _ in range(n):
     arr.append(int(input()))
+
 cnt = 1
-arr_cnt = [1]
-for i in range(n):
-    if i == 0 or arr[i] == arr[i - 1]:
+arr_cnt = []
+
+for i in range(1, n):
+    if arr[i] == arr[i - 1]:
         cnt += 1
-    elif arr[i] != arr[i - 1]:
+    else:
         arr_cnt.append(cnt)
-        cnt += 1
+        cnt = 1
+
+arr_cnt.append(cnt)
 print(max(arr_cnt))
