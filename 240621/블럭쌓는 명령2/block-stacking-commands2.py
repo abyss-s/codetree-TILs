@@ -7,5 +7,4 @@ for _ in range(k):
     for i in range(a - 1, b):
         arr[i] += 1
 arr.sort()
-print(arr)
 print(arr[n - 1])
