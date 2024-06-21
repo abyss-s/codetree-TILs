@@ -12,4 +12,4 @@ for i in range(1, n):
         cnt = 1
 
 max_cnt = max(max_cnt, cnt)
-print(max_cnt)
+print(max_cnt if max_cnt > 1 else 0)
