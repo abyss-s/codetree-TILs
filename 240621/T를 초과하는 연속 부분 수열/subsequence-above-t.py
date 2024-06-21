@@ -5,7 +5,7 @@ cnt = 1
 arr_cnt = []
 
 for i in range(1, n):
-    if arr[i - 1] >= t and arr[i - 1] < arr[i]:
+    if t < arr[i - 1] < arr[i]:
         cnt += 1
     else:
         arr_cnt.append(cnt)
