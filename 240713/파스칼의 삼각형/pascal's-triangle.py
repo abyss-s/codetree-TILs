@@ -1,21 +1,13 @@
 n = int(input())
 arr_2d = [[0 for _ in range(n)] for _ in range(n)]
-num = 1
-
-
-arr_2d[0][0] = 1
-arr_2d[1][0] = 1
-arr_2d[1][1] = 1
 
 # 행 첫번째 원소를 1로 초기화
-for i in range(2, n):
+for i in range(n):
     arr_2d[i][0] = 1
-# 행 마지막 원소를 1로 초기화
-for i in range(2, n):
-    arr_2d[i][n - i + 1] = 1
+    arr_2d[i][i] = 1
 
-for i in range(1, n):
-    for j in range(1, n):
+for i in range(2, n):
+    for j in range(1, i):
         arr_2d[i][j] = arr_2d[i - 1][j] + arr_2d[i - 1][j - 1]
 
 for row in arr_2d:
