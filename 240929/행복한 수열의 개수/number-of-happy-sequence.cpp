@@ -50,9 +50,10 @@ int main() {
     }
   }
 
-  if (n == 1)
-    cout << 1;
+  if (n == 1 && m ==1)
+    cout << 2;
   else
       cout << happy;
+  
   return 0;
 }
