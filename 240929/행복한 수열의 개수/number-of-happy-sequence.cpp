@@ -50,6 +50,9 @@ int main() {
     }
   }
 
-  cout << happy;
+  if (n == 1)
+    cout << 1;
+  else
+      cout << happy;
   return 0;
 }
