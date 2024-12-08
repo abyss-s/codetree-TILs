@@ -3,10 +3,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#define M INT_MAX
 
 int sol(int n) {
-  vector<int> dp(n + 1, M);
+  vector<int> dp(n + 1, 5000);
   dp[0] = 0;
   for (int i = 1; i <= n; i++) {
     for (int j = 1; j * j <= i; j++) {
