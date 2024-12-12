@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+#include <queue>
 #include <vector>
 using namespace std;
 
@@ -12,19 +13,30 @@ int main() {
   while (t--) {
     int m;
     cin >> m;
-    vector<int> v;
+    priority_queue<int> p;                             // 최대힙
+    priority_queue<int, vector<int>, greater<int>> q;  // 최소힙
 
     for (int i = 1; i <= m; i++) {
       int x;
       cin >> x;
-      v.push_back(x);
-      sort(v.begin(), v.end());
+
+      if (p.empty() || x <= p.top())
+        p.push(x);
+      else
+        q.push(x);
+
+      if (p.size() > q.size() + 1) {
+        q.push(p.top());
+        p.pop();
+      } else if (q.size() > p.size()) {
+        p.push(q.top());
+        q.pop();
+      }
 
       if (i % 2 == 1) {
-        cout << v[i / 2] << " ";
+        cout << p.top() << " ";
       }
     }
-
     cout << "\n";
   }
 
