@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 
 # 선두 변경 횟수
-res = 1
+res = 0
 # 이동 기록 저장
 a_moves, b_moves = [], []
 # 이동 거리
