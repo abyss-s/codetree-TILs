@@ -5,6 +5,14 @@ using namespace std;
 int n, m;
 int grid[200][200];
 
+// 트로미노 블록 (상대 좌표)
+int tromino[4][3][2] = {
+    {{0, 0}, {0, 1}, {0, 2}},  // 가로
+    {{0, 0}, {1, 0}, {2, 0}},  // 세로
+    {{0, 0}, {1, 0}, {1, 1}},  // ㄱ
+    {{0, 1}, {1, 0}, {1, 1}}   // ㄴ
+};
+
 int main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
@@ -20,24 +28,23 @@ int main() {
   int maxSum = 0;
 
   for (int i = 0; i < n; i++) {
-    for (int j = 0; j < m - 2; j++) {
-      int sum = grid[i][j] + grid[i][j + 1] + grid[i][j + 2];
-      maxSum = max(maxSum, sum);
-    }
-  }
-
-  for (int i = 0; i < n - 2; i++) {
     for (int j = 0; j < m; j++) {
-      int sum = grid[i][j] + grid[i + 1][j] + grid[i + 2][j];
-      maxSum = max(maxSum, sum);
-    }
-  }
-
-  for (int i = 0; i < n - 1; i++) {
-    for (int j = 0; j < m - 1; j++) {
-      int sum1 = grid[i][j] + grid[i + 1][j] + grid[i + 1][j + 1];
-      int sum2 = grid[i][j + 1] + grid[i + 1][j] + grid[i + 1][j + 1];
-      maxSum = max({maxSum, sum1, sum2});
+      for (int t = 0; t < 4; t++) {
+        int sum = 0;
+        bool valid = true;
+        for (int k = 0; k < 3; k++) {
+          int ni = i + tromino[t][k][0];
+          int nj = j + tromino[t][k][1];
+          if (ni >= 0 && ni < n && nj >= 0 && nj < m) {
+            sum += grid[ni][nj];
+          } else {
+            valid = false;
+            break;
+          }
+        }
+        if (valid)
+          maxSum = max(maxSum, sum);
+      }
     }
   }
 
