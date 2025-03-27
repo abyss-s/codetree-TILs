@@ -1,4 +1,4 @@
-arr = list(map(int, input().split(" ")))
+arr = list(map(int, input().split()))
 cnt = [0]*7
 for e in arr:
     cnt[e]+=1
